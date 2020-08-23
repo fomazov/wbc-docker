@@ -1,4 +1,5 @@
 # WBC test project docker installation
+```
 This project shows my skills at:
 - Configure runtime environment with docker
 - Developing REST API with PHP Phalcon Framework
@@ -6,6 +7,7 @@ This project shows my skills at:
 - Generate base client app with React (as a bonus)
 - Work with MySQL migration via phinx library
 - Auto-generating documentation from comments in code with apidoc nodejs library
+```
 ## 1. Setup and run docker service
 ```
 https://docs.docker.com/engine/install/
@@ -65,8 +67,8 @@ cd wbc-docker
 ./docker/docker-start.sh
 ```
 ## 10. Application ready to use
-   ```
-   wbc.fomazov.name - Application entry point
-   api-wbc.fomazov.name - REST API
-   vagran@127.0.0.1:3306 - MySQL instance
-   ```
+```
+- wbc.fomazov.name - Application entry point
+- api-wbc.fomazov.name - REST API + endpoint documentation
+- vagran@127.0.0.1:3306 - MySQL instance
+```
