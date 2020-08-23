@@ -12,7 +12,7 @@ cd $base_dir
 # Load last configuration
 git pull origin $(git rev-parse --abbrev-ref HEAD)
 
-cp wbs-api-config/environments/docker.json $project_dir/wbc-api/.env
+cp wbc-api-config/environments/docker.json $project_dir/wbc-api/.env
 
 initVersionFile() {
   local component=$1
@@ -26,4 +26,4 @@ initVersionFile() {
   echo "Version [${component}]: ${version_by_tag}"
 }
 
-initVersionFile 'wbs-client'
+initVersionFile 'wbc-client'
