@@ -1,0 +1,70 @@
+{
+  "api_host": {
+	"name"        : "wbc-api.fomazov.name",
+	"git"         : "ssh://git@bitbucket.org:fomazov/wbc-api.git",
+	"conf_folder" : "local",
+	"db_name"     : "wbc_api",
+	"db_name_test": "wbc_api_test",
+	"config_php"  : {
+	  "baseUrl"         : "https://wbc-api.fomazov.name/",
+	  "clientUrl"       : "https://wbc.fomazov.name/",
+	  "allowOrigin"     : "*",
+	  "dnsResolver": "127.0.0.11",
+	  "database" : {
+		"prefix" : "wbc_"
+	  },
+	  "memcached": {
+		"host": "v_memcached",
+		"port": 11211
+	  },
+	  "dbWbc" : {
+		"adapter" : "Mysql",
+		"host"    : "wbc_api_db",
+		"username": "vagrant",
+		"password": "rW7vhrguZskB358L",
+		"dbname"  : "wbc_api"
+	  },
+	  "mailgun" : {
+		"viewsDir": "{PHP}APP_PATH . '/views/mail/'{/PHP}",
+		"domain": "mail.fomazov.name",
+		"key": "key-d488eb0b976f1e7bdfe1cf6f6bf557b6",
+		"from": {
+		  "name": "WBC BOT",
+		  "email": "no-reply@fomazov.name"
+		}
+	  },
+	  "brokers" : {
+		"Client": {
+		  "secret": "d41d8cd98f"
+		},
+		"WebHook": {
+		  "secret": "92f61352b9"
+		}
+	  }
+	},
+	"config_migrate_yml": {
+	  "paths": {
+		"migrations": "%%PHINX_CONFIG_DIR%%/app/migrations"
+	  },
+	  "environments": {
+		"default_migration_table": "wbc_phinx_log",
+		"default_database": "local",
+		"local": {
+		  "adapter": "mysql",
+		  "host": "wbc_api_db",
+		  "name": "wbc_api",
+		  "user": "vagrant",
+		  "pass": "rW7vhrguZskB358L",
+		  "port": 3306,
+		  "charset": "utf8",
+		  "table_prefix": "wbc_",
+		  "admin": {
+			"1": {"first_name": "Oleksii", "last_name": "Fomazov", "user_type": "utAdmin", "email": "oleksii@fomazov.name", "pass": "Ydbx4GS5a5P7jUPX"}
+		  },
+		  "user": {
+			"2": {"first_name": "Kent", "last_name": "Marley", "user_type": "utUser", "email": "tepohis591@bpghmag.com", "pass": "d8zH9wQ785bydnEU"}
+		  }
+		}
+	  }
+	}
+}

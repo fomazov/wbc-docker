@@ -1,0 +1,14 @@
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+**/.DS_Store
+.bundle
+
+.idea
+**/.idea
+/tmp
+
+bk_*
+
+docker/data/db/*
+!docker/data/db/.gitkeep
