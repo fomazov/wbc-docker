@@ -10,7 +10,7 @@ docker-compose -v
 ```
 ## 3. Clone repository
 ```
-git clone git@bitbucket.org:fomazov/wbs-docker.git
+git clone git@bitbucket.org:fomazov/wbc-docker.git
 cd wbc-docker
 git submodule update --init --recursive
 chmod +x ./docker/*.sh

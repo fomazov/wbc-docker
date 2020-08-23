@@ -1,0 +1,19 @@
+version: '3'
+services:
+    v_wbc_api_db:
+        image: 'mariadb:10.2'
+        container_name: v_wbc_api_db
+        restart: on-failure
+        command: mysqld --sql_mode=""
+        environment:
+            MYSQL_ROOT_PASSWORD: password_test
+        ports:
+            - '3306:3306'
+        volumes:
+            - ${project_dir}/docker/data/db:/var/lib/mysql
+            - ${project_dir}/docker/provision/mysql:/docker-entrypoint-initdb.d
+
+    v_memcached:
+        image: 'memcached:1.5.3-alpine'
+        container_name: v_memcached
+        restart: on-failure

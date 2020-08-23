@@ -1,0 +1,43 @@
+version: '3'
+services:
+    v_nginx:
+        image: 'mrchub/nginx-lua:1.0.0'
+        container_name: v_nginx
+        restart: on-failure
+        depends_on:
+            - v_memcached
+            - v_wbc_api_fpm
+            - v_wbc_client_fpm
+        ports:
+            - '80:80'
+            - '443:443'
+        volumes:
+            - ${project_dir}/docker/config/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ${project_dir}/docker/config/etc/nginx/config:/etc/nginx/config
+            - ${project_dir}/wbc-api:/var/www/api-html
+            - ${project_dir}/wbc-client/public:/var/www/wbc-client/public
+
+    v_wbc_api_fpm:
+        image: 'mrchub/backend-base-api-fpm-xdebug:1.0.0'
+        container_name: v_wbc_api_fpm
+        restart: always
+        depends_on:
+            - v_memcached
+            - v_wbc_api_db
+        external_links:
+            - v_nginx:wbc.fomazov.name
+        volumes:
+            - ${project_dir}/wbc-api:/var/www/api-html
+
+    v_wbc_client_fpm:
+        image: 'mrchub/gate-frontend-fpm-xdebug:1.0.0'
+        container_name: v_wbc_client_fpm
+        restart: on-failure
+        volumes:
+            - ${project_dir}/wbc-client:/var/www/wbc-client
+        depends_on:
+            - v_memcached
+            - v_wbc_api_db
+        external_links:
+            - v_nginx:api-wbc.fomazov.name
+        tty: true
