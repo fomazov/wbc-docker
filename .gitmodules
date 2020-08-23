@@ -1,7 +1,7 @@
 [submodule "wbc-api"]
 	path = wbc-api
-	url = ssh://git@bitbucket.org:fomazov/wbc-api.git
+	url = git@bitbucket.org:fomazov/wbc-api.git
 [submodule "wbc-client"]
 	path = wbc-client
-	url = ssh://git@bitbucket.org:fomazov/wbc-client.git
+	url = git@bitbucket.org:fomazov/wbc-client.git
 
