@@ -3,7 +3,7 @@
 This project shows my skills at:
 - Configure runtime environment with docker
 - Developing REST API with PHP Phalcon Framework
-- Authentificate on client-side with Twig Framework
+- Authentificate on client-side with Slim Framework
 - Generate base client app with React (as a bonus)
 - Work with MySQL migration via phinx library
 - Auto-generating documentation from comments in code with apidoc nodejs library
